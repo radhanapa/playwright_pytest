@@ -31,9 +31,14 @@ jobs:
         pip install pytest-playwright allure-pytest pytest-xdist python-dotenv
         playwright install --with-deps
 
-    - name: Run Smoke and API Tests
-      # We use 'continue-on-error' so the report generates even if a test fails
-      run: pytest -m "smoke or api" --alluredir=allure-results
+    # - name: Run Smoke and API Tests
+    #   # We use 'continue-on-error' so the report generates even if a test fails
+    #   run: pytest -m "smoke or api" --alluredir=allure-results
+    #   continue-on-error: true
+
+    - name: Run All Tests
+      # Removed the -m filter so it grabs all 11+ tests
+      run: pytest --alluredir=allure-results --screenshot=only-on-failure
       continue-on-error: true
 
     - name: Generate Allure Report
