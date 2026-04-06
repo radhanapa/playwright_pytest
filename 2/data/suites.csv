@@ -1,0 +1,5 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"Verifies that a user can log in with valid credentials.","435","test_valid_login[chromium]","tests.ui","Mon Apr 06 22:18:07 UTC 2026","passed","Mon Apr 06 22:18:08 UTC 2026","","test_auth","",""
+"","58","test_get_multiple_posts[chromium-1-sunt aut facere repellat provident occaecati excepturi optio reprehenderit]","tests.api","Mon Apr 06 22:18:07 UTC 2026","passed","Mon Apr 06 22:18:07 UTC 2026","","test_json_api","",""
+"","15","test_get_multiple_posts[chromium-2-qui est esse]","tests.api","Mon Apr 06 22:18:08 UTC 2026","passed","Mon Apr 06 22:18:08 UTC 2026","","test_json_api","",""
+"","14","test_get_multiple_posts[chromium-3-ea molestias quasi exercitationem repellat qui ipsa sit aut]","tests.api","Mon Apr 06 22:18:08 UTC 2026","passed","Mon Apr 06 22:18:08 UTC 2026","","test_json_api","",""
