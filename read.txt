@@ -1,0 +1,47 @@
+# ==============================================================================
+# PLAYWRIGHT PYTEST & ALLURE COMMAND LIST
+# ==============================================================================
+
+# 1. RUN A SINGLE TEST
+# ------------------------------------------------------------------------------
+# Run a specific file and generate results:
+pytest tests/ui/test_auth.py --alluredir=allure-results
+
+# Run a specific test case by its function name:
+pytest -k "test_valid_login" --alluredir=allure-results
+
+
+# 2. RUN TESTS IN PARALLEL
+# ------------------------------------------------------------------------------
+# Run with 2 workers (Recommended for stability and to avoid timeouts):
+pytest -n 2 --alluredir=allure-results --clean-alluredir
+
+# Run using all available CPU cores:
+pytest -n auto --alluredir=allure-results --clean-alluredir
+
+
+# 3. GENERATE & VIEW REPORTS
+# ------------------------------------------------------------------------------
+# QUICK VIEW (Local): Compiles results and opens a temporary browser window
+allure serve allure-results
+
+# PERMANENT BUILD: Creates a static 'allure-report' folder for sharing/CI-CD
+allure generate allure-results --clean -o allure-report
+
+# VIEW PERMANENT BUILD: Opens the static folder in a local server
+allure open allure-report
+
+
+# 4. ONE-STEP EXECUTION (RUN + OPEN REPORT)
+# ------------------------------------------------------------------------------
+# Run tests with 2 workers and immediately launch the Allure dashboard:
+pytest -n 2 --alluredir=allure-results --clean-alluredir && allure serve allure-results
+
+
+# 5. USEFUL DEBUGGING FLAGS
+# ------------------------------------------------------------------------------
+# --slowmo 500              : Adds 500ms delay between actions to reduce load
+# --trace retain-on-failure  : Records a trace for the report if a test fails
+# --screenshot=on            : Attaches a screenshot to every test in Allure
+# --headed                  : Runs the browser in visible mode (not for parallel)
+# ==============================================================================
